@@ -17,6 +17,8 @@ About the project.
 
 ###Instructions
 * link to Herokuapp: 
+* link to Github: http://www.github.com/egggkim/project4
+* link to CircleCI: https://circleci.com/gh/egggkim/project4/
 
 ###About the developer
 Karen! 
