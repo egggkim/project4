@@ -16,7 +16,9 @@ gem 'angularjs-rails'
 gem 'bcrypt'
 gem 'bower-rails'
 gem 'pry'
-gem "simple_calendar", "~> 1.1.0"
+# calendar gems
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 
 group :development, :test do
   gem 'rspec-rails'

@@ -14,4 +14,38 @@
 //= require jquery_ujs
 //= require angular
 //= require angular-resource
+//= require moment
+//= require fullcalendar
+//= require fullcalendar/gcal
 //= require_tree .
+
+$(document).ready(function() {
+
+  // initialize the calendar on document ready 
+
+  // calendar options below
+  $('#calendar').fullCalendar({
+    editable: true,
+    eventColor: tomato,
+    eventTextColor: white,
+    // eventLimit option may need to be changed
+    eventLimit: true,
+    fixedWeekCount: false,
+    header: {
+      left:   'title',
+      center: '',
+      right:  'today prev,next'
+    }
+  });
+
+  // calendar functions below
+  $('#calendar').fullCalendar({
+    // calendar functions below
+    dayClick: function() {
+      console.log('a day has been clicked!');
+      // add new event function here
+    }
+
+  });
+
+});
