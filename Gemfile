@@ -23,12 +23,14 @@ gem 'momentjs-rails'
 
 # image uploads 
 gem 'carrierwave'
-gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'carrierwave-postgresql'
 gem 'fog'         # required for Amazon S3
 gem 'mini_magick' # for post-upload image processing
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'guard'
+  gem 'guard-rspec', require: false
   gem 'better_errors', '~> 2.0.0'
   gem 'binding_of_caller'
   gem 'factory_girl_rails'
