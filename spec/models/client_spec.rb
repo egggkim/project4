@@ -1,5 +1,58 @@
 require 'rails_helper'
 
 RSpec.describe Client, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "has a valid factory for clients" do
+    expect(FactoryGirl.build(:client)).to be_valid
+  end
+
+  # ============== clients name validation tests ==============
+  it "has a name" do
+    client = FactoryGirl.build(:client, :name => nil)
+    expect(client).to respond_to(:name)
+    expect(client).to be_invalid
+    expect{client.save!}.to raise_error(ActiveRecord::RecordInvalid)
+  end
+
+  it "invalid when a name has over 30 characters" do
+    client = FactoryGirl.build(:client)
+    client.name = "j" * 31
+    expect(client).to be_invalid
+  end
+
+# ============== clients email validation tests ==============
+  it "responds to an email address" do
+    client = FactoryGirl.build(:client)
+    expect(client).to respond_to(:email)
+    expect(client.email).to_not be_nil
+    expect(client.email).to_not be_empty
+  end
+
+  it "is invalid without an email address and will raise an error" do
+    client = FactoryGirl.build(:client, :email => nil)
+    expect(client).to be_invalid
+    expect{client.save!}.to raise_error(ActiveRecord::RecordInvalid)
+  end
+
+  it "has a properly formatted email address" do
+    expect(FactoryGirl.build(:client, email:"test.com")).to be_invalid
+  end
+
+  it "has an email address that is fewer than 100 characters" do
+    client = FactoryGirl.build(:client, :email => "a" * 92 + "email.com")
+    expect(client).to be_invalid
+  end
+
+  # ============== clients phone validation tests ==============
+  it "has a phone number" do
+    client = FactoryGirl.build(:client, :phone => nil)
+    expect(client).to respond_to(:phone)
+    expect(client).to be_invalid
+    expect{client.save!}.to raise_error(ActiveRecord::RecordInvalid)
+  end
+
+  it "has a properly formatted phone number" do
+    client = FactoryGirl.build(:client, :phone => "1234567890")
+    expect(client).to be_invalid
+  end
+
 end

@@ -13,6 +13,11 @@ RSpec.describe User, :type => :model do
     expect{user.save!}.to raise_error(ActiveRecord::RecordInvalid)
   end
 
+  it "invalid when a name has over 30 characters" do
+    user = FactoryGirl.build(:user, :name => "j" * 31)
+    expect(user).to be_invalid
+  end
+
   # ============== users email validation tests ==============
   it "responds to an email address" do
     user = FactoryGirl.build(:user)
@@ -29,6 +34,11 @@ RSpec.describe User, :type => :model do
 
   it "has a properly formatted email address" do
     expect(FactoryGirl.build(:user, email:"test.com")).to be_invalid
+  end
+
+  it "has an email address that is fewer than 100 characters" do
+    user = FactoryGirl.build(:user, :email => "a" * 92 + "email.com")
+    expect(user).to be_invalid
   end
 
   it "is invalid if a new user registers with an email that already exists in the database" do
