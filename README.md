@@ -5,13 +5,14 @@
 ###README
 About the project.
 
-
 ###Implementation
 * Ruby on Rails
 * PostgreSQL
 * Rspec testing
 * JSON
 * Jquery
+	* About Fullcalendar:
+		* FullCalendar is a jQuery plugin that provides a full-sized, drag & drop event calendar like the one below. It uses AJAX to fetch events on-the-fly and is easily configured to use your own feed format. It is visually customizable with a rich API. 
 * Bootstrap
 * Pivotal Tracker
 

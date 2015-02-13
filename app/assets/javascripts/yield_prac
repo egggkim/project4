@@ -1,0 +1,59 @@
+def times(n)
+  i = 0
+  while i < n 
+    yield
+    i+= 1
+  end
+end
+
+times(3) { puts "Hi" }
+
+def each(array)
+  i = 0
+  while i < array.length
+    yield array[i]
+    i += 1
+  end
+end
+# javascript
+# for(var i = 0; i < array.length; i++) {
+  # puts array[i];
+# }
+
+names = ["dan", "jimmy", "peter"]
+each(names) { |i| puts i }
+each(names) do |item| puts item + " eats ice cream hehe" end
+
+
+def any?(array)
+  array.each { |item| return true if yield(item) }
+  return false
+end
+
+any?([1,2,3]) { |item| item.odd? }
+
+
+
+def count(array)
+  n = 0
+  each(array) do |item| 
+    if yield(item) 
+      n += 1 
+    end
+  end
+  return n
+end
+
+
+def map(array)
+  out = []
+  array.each do |item| 
+    out.push(yield(item))
+  end
+  return out
+end
+
+nums = [1,2,3]
+map(nums) {|item| item * 2 }
+
+
