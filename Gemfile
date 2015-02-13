@@ -16,9 +16,16 @@ gem 'angularjs-rails'
 gem 'bcrypt'
 gem 'bower-rails'
 gem 'pry'
-# calendar gems
+
+# calendar
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+
+# image uploads 
+gem 'carrierwave'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'fog'         # required for Amazon S3
+gem 'mini_magick' # for post-upload image processing
 
 group :development, :test do
   gem 'rspec-rails'
