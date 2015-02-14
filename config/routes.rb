@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   get '/about' => 'home#about'
   get '/contact' => 'home#contact'
 
+  namespace :api do
+    resources :events,only: [:index, :show], defaults: { format:"json" }
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

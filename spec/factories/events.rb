@@ -5,5 +5,4 @@ FactoryGirl.define do
     start_time "2015-02-13 12:14:13 -0800"
     end_time "2015-02-13 15:14:13 -0800"
   end
-
 end

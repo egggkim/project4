@@ -19,6 +19,10 @@
 //= require fullcalendar/gcal
 //= require_tree .
 
+function initialize() {
+  document.getElementByTagName('div').style.backgroundColor="red";
+}
+
 $(document).ready(function() {
 
   // initialize the calendar on document ready 
@@ -34,11 +38,11 @@ $(document).ready(function() {
 
   // calendar options below
   // $('#calendar').fullCalendar({
-    // editable: true,
-    // eventColor: tomato,
-    // eventTextColor: white,
-    // eventLimit option may need to be changed
-    // eventLimit: true,
+  //   editable: true,
+  //   eventColor: tomato,
+  //   eventTextColor: white,
+  //   eventLimit option may need to be changed
+  //   eventLimit: true,
   //   fixedWeekCount: false,
   //   header: {
   //     left:   'title',
