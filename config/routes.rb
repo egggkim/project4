@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'home#index'
+  
   # single page app
   get '/home' => 'home#index' 
 
@@ -11,8 +14,10 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
+  match '*all' => 'application#handle_options', via: :options
+
   namespace :api, defaults: { format:"json" } do
-    resources :clients
-    resources :events,only: [:index, :show]
+    resources :todos
+    # resources :events, only: [:index, :show]
   end
 end
