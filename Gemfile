@@ -41,3 +41,9 @@ end
 group :development do
   gem 'quiet_assets'
 end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'thin'
+  gem 'unicorn', '4.8.3'
+end

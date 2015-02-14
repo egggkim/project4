@@ -12,44 +12,48 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require angular
 //= require angular-resource
+//= require angular-route
+//= require angular-rails-templates
 //= require moment
 //= require fullcalendar
 //= require fullcalendar/gcal
 //= require_tree .
+//= require_tree ./templates
 
-function initialize() {
-  document.getElementByTagName('div').style.backgroundColor="red";
-}
+// function initialize() {
+//   document.getElementByTagName('div').style.backgroundColor="red";
+// }
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
-  // initialize the calendar on document ready 
+//   // initialize the calendar on document ready 
 
-  // calendar functions below
-  $('#calendar').fullCalendar({
-    // calendar functions below
-    dayClick: function() {
-      console.log('a day has been clicked!');
-      // add new event function here
-    }
-  });
+//   // calendar functions below
+//   $('#calendar').fullCalendar({
+//     // calendar functions below
+//     dayClick: function() {
+//       console.log('a day has been clicked!');
+//       // add new event function here
+//     }
+//   });
 
-  // calendar options below
-  // $('#calendar').fullCalendar({
-  //   editable: true,
-  //   eventColor: tomato,
-  //   eventTextColor: white,
-  //   eventLimit option may need to be changed
-  //   eventLimit: true,
-  //   fixedWeekCount: false,
-  //   header: {
-  //     left:   'title',
-  //     center: '',
-  //     right:  'today prev,next'
-  //   }
-  // });
+//   // calendar options below
+//   // $('#calendar').fullCalendar({
+//   //   editable: true,
+//   //   eventColor: tomato,
+//   //   eventTextColor: white,
+//   //   eventLimit option may need to be changed
+//   //   eventLimit: true,
+//   //   fixedWeekCount: false,
+//   //   header: {
+//   //     left:   'title',
+//   //     center: '',
+//   //     right:  'today prev,next'
+//   //   }
+//   // });
 
 
-});
+// });

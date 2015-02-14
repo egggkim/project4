@@ -1,9 +1,25 @@
 <!-- landing page calendar view -->
 
 <!-- add if logged in conditional -->
-<div class='cal-container'>
+<!-- <div class='cal-container'>
   <div id='calendar'></div>
+</div>
+ -->
+
+<!-- else render standard index below -->
+
+<div ng-controller="cookieController as cookie">
+
+
+  <% if logged_in? %>
+
+    <div ng-view ng-init="cookie.init(<%= current_user.id %>)">
+
+    </div>      
+    
+  <% end %>
+    
 </div>
 
 
-<!-- else render standard index below -->
+
