@@ -3,7 +3,7 @@
 <head>
   <% if logged_in? %>
     <title ng-bind="title"></title>
-    <!-- refers to the $rootScope title that we created -->
+    <!-- refers to the $rootScope title that was created -->
   <% else %>
     <title><%= yield(:title) %></title>
     <!-- if angular, show angular title - else show rails title -->
@@ -26,7 +26,6 @@
 <%= render 'shared/nav' %>
 
 <%= yield %>
-
 
 </body>
 </html>
