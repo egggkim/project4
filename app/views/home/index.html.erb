@@ -10,11 +10,8 @@
 
 <div ng-controller="cookieController as cookie">
 
-
   <% if logged_in? %>
-
     <div ng-view ng-init="cookie.init(<%= current_user.id %>)">
-
     </div>      
     
   <% end %>
