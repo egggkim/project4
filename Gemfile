@@ -16,6 +16,7 @@ gem 'angularjs-rails'
 gem 'bcrypt'
 gem 'bower-rails'
 gem 'pry'
+gem 'responders', '~> 2.0'
 
 # calendar
 gem 'fullcalendar-rails'
