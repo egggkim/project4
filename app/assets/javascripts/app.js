@@ -4,7 +4,7 @@
 		.module('app', [
 			'templates',
 			'ngResource',
-      'ngRoute',							
+      'ngRoute',						
 			'ipCookie'
 		]);
 

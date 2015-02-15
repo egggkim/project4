@@ -1,0 +1,36 @@
+<h1>todos</h1>
+
+<div class="wrapper" ng-controller="TodosController as todos">
+
+  <header>
+    <h1>{{ todos.todoList.length }} to dos</h1>
+    <h4>
+      {{ todos.completedTodos() }} completed tasks 
+      <br>
+      {{ todos.remainingTodos() }} remaining tasks
+    </h4>
+  </header>
+
+  <main>        
+    <!-- begin add new todo -->
+    <section class="add-todo">
+      <input class="text-box" type="text" placeholder="Enter your task here" ng-model="todos.text">
+      <button class="btn btn-add" ng-click="todos.addTodo()">+</button>
+    </section>
+    <!-- end add new todo -->
+
+    <!-- begin show all todos -->
+    <section class="todo-list">
+      <ul>
+        <li ng-repeat="todo in todos.todoList">
+          <input class="checkbox" type="checkbox" ng-model="todo.done">
+          <span ng-class="{done: todo.done}">{{ todo.task }}</span>
+          <button class="btn btn-delete" ng-click="todos.deleteTodo($index)">x</button>
+        </li>
+      </ul>
+    </section>
+    <!-- end show all todos -->
+  </main>
+
+</div>
+  

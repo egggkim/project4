@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root 'home#index'
   
   # single page app
@@ -13,6 +12,15 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
+
+  # resources for calendar
+  get '/calendar' => 'home#index'
+
+  # resources for todos
+  get '/todos' => 'todos#index'
+
+  # resources for addressbook
+  get '/addressbook' => 'addressbook#index'
 
   match '*all' => 'application#handle_options', via: :options
 

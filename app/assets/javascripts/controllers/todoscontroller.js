@@ -8,7 +8,7 @@ angular
     var self = this;
 
     var Todo = $resource("http://localhost:3000/api/todos/:id",
-      {id: "@id"},
+      { id: "@id" },
       {
         'update': { method: 'PUT' }
       }

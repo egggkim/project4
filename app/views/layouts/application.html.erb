@@ -21,9 +21,14 @@
 </head>
 
 <body>
-<%= render 'shared/nav' %>
+  <!-- return the nav below when angular templates work -->
+  <!-- <%= render 'shared/nav' %> -->
 
-<%= yield %>
+  <%= link_to "calendar", root_path %>
+  <%= link_to "todos", todos_path %>
+  <%= link_to "address book", addressbook_path %>
+
+  <%= yield %>
 
 </body>
 </html>

@@ -26,13 +26,6 @@
         controllerAs: 'main'
       })
 
-      // .when('/edit/:id', {
-      //   title: "Edit user",
-      //   templateUrl: 'edit.html',
-      //   controller: 'MainController',
-      //   controllerAs: 'main'
-      // })
-
       .when('/todo', {
         title: "todos",
         templateUrl: 'todo.html',
