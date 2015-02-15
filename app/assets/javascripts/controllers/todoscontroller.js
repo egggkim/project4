@@ -8,11 +8,11 @@ angular
     var self = this;
 
     var Todo = $resource("http://localhost:3000/api/todos/:id",
-        {id: "@id"},
-        {
-              'update': { method: 'PUT' }
-          }
-      );
+      {id: "@id"},
+      {
+        'update': { method: 'PUT' }
+      }
+    );
 
     self.todoList   = getTodos();     // INDEX
     self.addTodo    = addTodo;        // CREATE

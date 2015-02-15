@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(version: 20150214225244) do
   create_table "todos", force: :cascade do |t|
     t.string   "task"
     t.boolean  "done"
+    t.datetime "due_date"
+    t.integer  "user_id"
+    t.integer  "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :clients
   has_many :events
+  has_many :todos
 
   # user attribute validations
   validates :name, presence: :true, length: { maximum: 30 }

@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   belongs_to :user
   belongs_to :client
+  has_many :todos
 
   validates :address, presence: :true, length: { maximum: 30 }
   validates :date, presence: :true
