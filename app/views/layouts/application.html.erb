@@ -23,14 +23,10 @@
 
 <body>
   <!-- return the nav below when angular templates work -->
-  <!-- <%= render 'shared/nav' %> -->
+  <%= render 'shared/nav' %>
 
-  <%= link_to "calendar", root_path %>
-  <%= link_to "todos", todos_path %>
-  
-  <%= link_to "add contact", new_client_path %>
-
-  <%= yield %>
-
+  <div ng-view>
+    <%= yield %>
+  </div>
 </body>
 </html>

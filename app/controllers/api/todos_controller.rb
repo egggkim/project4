@@ -18,7 +18,7 @@ module API
       if todo.save
         render json: todo, status: 201
       else
-        render json: {errors: todo.errors}, status: 422
+        render json: { errors: todo.errors }, status: 422
       end
     end
 
@@ -27,7 +27,7 @@ module API
       if todo.update(todo_params)
         render json: todo, status: 200
       else
-        render json: {errors: todo.errors}, status: 422
+        render json: { errors: todo.errors }, status: 422
       end
     end
 

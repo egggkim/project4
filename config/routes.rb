@@ -13,20 +13,23 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
-  # resources for calendar
-  get '/calendar' => 'home#index'
+  # # resources for calendar
+  # get '/calendar' => 'home#index'
 
-  # resources for todos
-  get '/todos' => 'todos#index'
+  # # resources for todos
+  # get '/todos' => 'todos#index'
 
-  # resources for clients
-  resources :clients
-  get '/clients' => 'clients#index'
+  # # resources for clients
+  # resources :clients
+  # get '/clients' => 'clients#index'
+
+  # # resources for events
+  # resources :events
 
   match '*all' => 'application#handle_options', via: :options
 
   namespace :api, defaults: { format:"json" } do
     resources :todos
-    # resources :events, only: [:index, :show]
+    resources :events
   end
 end
