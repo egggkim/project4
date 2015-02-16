@@ -54,6 +54,13 @@
         controllerAs: 'main'
       })
 
+      .when('/events/new', {
+        title: "events",
+        templateUrl: 'event.html',
+        controller: 'MainController',
+        controllerAs: 'main'
+      })
+
       .otherwise({
         redirectTo: '/'
       });

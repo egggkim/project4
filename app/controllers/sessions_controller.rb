@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     # [:login] defined in view as form for login
     if user && user.authenticate(params[:login][:password])
       session[:user_id] = user.id.to_s
-      redirect_to root_path
+      redirect_to home_path
 
     else
       flash[:notice] = "Error logging in. Please try again."

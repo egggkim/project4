@@ -22,11 +22,15 @@
 </head>
 
 <body>
-  <!-- return the nav below when angular templates work -->
-  <%= render 'shared/nav' %>
+  <% if logged_in? %>
+    <!-- angular templates -->
+    <%= render 'shared/nav' %>
+    <div ng-view>
+    </div>
 
-  <div ng-view>
+  <% else %>
+    <!-- rails views -->
     <%= yield %>
-  </div>
+  <% end %>
 </body>
 </html>
