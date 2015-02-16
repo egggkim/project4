@@ -19,8 +19,9 @@ Rails.application.routes.draw do
   # resources for todos
   get '/todos' => 'todos#index'
 
-  # resources for addressbook
-  get '/addressbook' => 'addressbook#index'
+  # resources for clients
+  resources :clients
+  get '/clients' => 'clients#index'
 
   match '*all' => 'application#handle_options', via: :options
 
