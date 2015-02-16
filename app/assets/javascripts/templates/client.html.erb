@@ -4,21 +4,14 @@
 
 <!-- Add client name filter here -->
 
-<div ng-controller="ClientsController as clients">
+<h4>Clients:</h4>
 
-  <header>Clients</header>
-
-  <section class="add-client">
-    <input class="text-box" type="text" placeholder="Name:" ng-model="name">
-    <input class="text-box" type="text" placeholder="Email:" ng-model="email">
-    <input class="text-box" type="text" placeholder="Phone:" ng-model="phone">
-    <button class="btn btn-add" ng-click="clients.addClient()">+</button>
-  </section>
-
-  <section class="client-list">
+<div id="client-list" ng-controller="ClientsController as clients">
+  <ul>
     <li ng-repeat="client in clients.clientList">
-      
+     {{ client.name }}
+     {{ client.email }}
+     {{ client.phone }}
     </li>
-  </section>
-  
+  </ul>
 </div>

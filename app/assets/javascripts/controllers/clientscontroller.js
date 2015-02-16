@@ -2,17 +2,25 @@ angular
   .module("app")
   .controller("ClientsController", ClientsController);
 
-  ClientsController.$inject = ['$resource'];
+  ClientsController.$inject = ['$resource', '$http'];
 
-  function ClientsController($resource){
+  function ClientsController($resource, $http){
     var self = this;
 
-    var client = $resource("http://localhost:3000/api/clients/:id",
-      { id: "@id" },
-      {
-        'update': { method: 'PUT' }
-      }
-    );
+    // var client = $resource("http://localhost:3000/api/clients/:id",
+    //   { id: "@id" },
+    //   {
+    //     'index': { method: 'GET', isArray: true },
+    //     'update': { method: 'PUT' }
+    //   }
+    // );
+
+    self.clientList = [];
+    $http.get("http://localhost:3000/api/clients").
+      success(function(data, status, headers, config){
+        console.log(data);
+        self.clientList = data.clients;
+      }) ;
 
     self.addClient    = addClient;        // CREATE
     self.updateClient = updateClient;     // UPDATE
@@ -25,13 +33,13 @@ angular
 
     // CREATE
     function addClient(){
-      var clientList = new Client();
-      clientList.name = self.name;
-      clientList.email = self.email;
-      clientList.phone = self.phone;
-      clientList.$save();  // POST /api/clients
+      var client = new Client();
+      client.name = self.name;
+      client.email = self.email;
+      client.phone = self.phone;
+      client.$save();  // POST /api/clients
 
-      this.clientList.push(clientList);
+      self.clientList.push(client);
       self.name = null;
       self.phone = null;
       self.email = null;
