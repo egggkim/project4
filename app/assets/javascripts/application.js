@@ -31,6 +31,21 @@ $(document).ready(function() {
 
   // initialize the calendar on document ready 
 
+  var date = new Date();
+  var d = date.getDate();
+  var m = date.getMonth();
+  var y = date.getFullYear();
+
+  $('#button_id').click(function() {
+    var newEvent = {
+      title: 'NEW EVENT',
+      start: new Date(y, m, d)
+    };
+    $('#calendar').fullCalendar( 'renderEvent', newEvent , 'stick');
+  });
+
+
+
   // calendar functions below
   $('#calendar').fullCalendar({
     // calendar functions below
