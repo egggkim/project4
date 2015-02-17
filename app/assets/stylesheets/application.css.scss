@@ -44,6 +44,13 @@ li {
   width: 80%;
   margin: 0 auto;
   text-align: center;
+  // address book search filter
+  input {
+    width: 60%;
+    font-family: 'fanwood';
+    font-size: 16px;
+    text-align: center;
+  }
 }
 
 #addressbook-header {
@@ -52,22 +59,18 @@ li {
   text-align: center;
 }
 
-// address book search filter
-input {
-  width: 60%;
-  font-family: 'fanwood';
-  font-size: 16px;
-  text-align: center;
-}
 
 #contact-list {
   li {
     display: inline-block;
-    border: 1px solid black;
+    background-color: #f6f6f6;
     width: 250px;
     height: 150px;
     margin: 30px;
     margin-top: 10px;
+  }
+  hr {
+    border-top: 3px solid #ffffff; 
   }
   a {
     color: #000000;

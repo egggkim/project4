@@ -1,13 +1,21 @@
-<% if flash[:notice] %>
-  <%= flash[:notice] %>
-<% end %>
+<div class='users-forms'>
+  <% if flash[:notice] %>
+    <%= flash[:notice] %>
+  <% end %>
 
-<h1>Log In</h1>
-<%= bootstrap_form_for :login do |f| %>
-  <%= f.text_field :email, label: "Email:", class: "form-font" %>
-  <%= f.password_field :password, label: "Password:", class: "form-font" %>
+  <div class="form-header">logo placeholder</div>
 
-  <%= f.submit 'Log In' %>
-<% end %>
-<br>
-<%= link_to "Cancel", root_path  %>
+  <div class="login-form">
+    <h3>PLACEHOLDER: LOGIN</h3><hr>
+    <%= form_for :login do |f| %>
+      <%= f.text_field :email, hide_label: true, placeholder: "Email" %>
+      <%= f.password_field :password, hide_label: true, placeholder: "Password" %>
+
+      <%= f.submit 'Log In', :id => "form-submit" %>
+    <% end %>
+    <br>
+
+    <p>Not a member yet?</p><%= link_to "Sign Up", signup_path %>
+  </div>
+  <%= link_to "Cancel", root_path %>
+</div>

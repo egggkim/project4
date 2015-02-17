@@ -11,6 +11,7 @@
   <div id="client-list" ng-controller="ClientsController as clients">
   <input ng-model="searchClient" placeholder="Search for a client by name, number or email">
 
+<!-- need to add style to li to account for text overflow -->
   <ul id="contact-list">
     <div class="contact">
       <li class="col-md-4" ng-repeat="client in clients.clientList | orderBy:'name' | filter:searchClient">
