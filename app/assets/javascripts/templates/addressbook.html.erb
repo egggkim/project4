@@ -14,11 +14,12 @@
 <!-- need to add style to li to account for text overflow -->
   <ul id="contact-list">
     <div class="contact">
-      <li class="col-md-4 contact-info" ng-repeat="client in clients.clientList | orderBy:'name' | filter:searchClient">
-        <p id="client-name">{{ client.name }}</p><hr>
+      <li class="col-md-4 contact-info" ng-repeat="client in clients.clientList | orderBy:'last_name' | filter:searchClient">
+        <p id="client-name">{{ client.last_name }}, {{ client.first_name }}</p><hr>
         <p class="client-info">Email: <a href="mailto:{{ client.email }}?Subject=Hello!">{{ client.email }}</a></p>
         <p class="client-info">Phone:{{ client.phone }}</p>
         <!-- add link to edit client info -->
+
       </li>
     </div>
   </ul>

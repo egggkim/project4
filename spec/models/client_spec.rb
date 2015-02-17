@@ -6,16 +6,29 @@ RSpec.describe Client, :type => :model do
   end
 
   # ============== clients name validation tests ==============
-  it "has a name" do
-    client = FactoryGirl.build(:client, :name => nil)
-    expect(client).to respond_to(:name)
+  it "has a first name" do
+    client = FactoryGirl.build(:client, :first_name => nil)
+    expect(client).to respond_to(:first_name)
     expect(client).to be_invalid
     expect{client.save!}.to raise_error(ActiveRecord::RecordInvalid)
   end
 
-  it "invalid when a name has over 30 characters" do
+  it "invalid when a first name has over 30 characters" do
     client = FactoryGirl.build(:client)
-    client.name = "j" * 31
+    client.first_name = "j" * 31
+    expect(client).to be_invalid
+  end
+  
+  it "has a last name" do
+    client = FactoryGirl.build(:client, :last_name => nil)
+    expect(client).to respond_to(:last_name)
+    expect(client).to be_invalid
+    expect{client.save!}.to raise_error(ActiveRecord::RecordInvalid)
+  end
+
+  it "invalid when a last name has over 30 characters" do
+    client = FactoryGirl.build(:client)
+    client.last_name = "j" * 31
     expect(client).to be_invalid
   end
 
