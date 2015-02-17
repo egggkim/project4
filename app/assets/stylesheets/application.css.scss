@@ -42,6 +42,12 @@
     font-family: 'fanwood';
     font-size: 16px;
     text-align: center;
+    margin: 20px;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 20px;
   }
 }
 
@@ -50,6 +56,7 @@
   height: 250px;
   background-color: #eeeeee;
   text-align: center;
+  margin: 20px;
 }
 
 // address book content
@@ -60,13 +67,18 @@
     width: 250px;
     height: 150px;
     margin: 30px;
-    margin-top: 10px;
+    margin-top: 30px;
   }
   #client-name {
     text-transform: uppercase;
     font-family: "gotham condensed";
     font-size: 1.1em;
     letter-spacing: 4px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+  }
+  .client-info {
+    padding: 10px;
   }
   hr {
     border-top: 3px solid #ffffff; 
@@ -81,14 +93,49 @@
   }
 }
 
+// nav bar for users and non-users
+.nav {
+  a {   
+    color: #969696;
+    margin: 10px;
+    font-family: bebas;
+    letter-spacing: 3px;
+    text-decoration: none;
+  }
+  text-align: center;
+  vertical-align: "text-bottom";
+  margin-bottom: 20px;
+}
+
+.logout {
+  color: #969696;
+  margin: 10px;
+  letter-spacing: 3px;
+  text-decoration: none;
+}
+
+// nav bar links below are for development only
+.development {
+  text-align: center;
+  margin-bottom: 30px;
+  a {   
+    color: #969696;
+    margin: 10px;
+    letter-spacing: 3px;
+    text-decoration: none;
+  }
+}
+
 // footer for all pages and views
 .footer {
   font-family: "fanwood"; 
   margin-top: 50px;
-  margin-bottom: 20px;
   text-align: center;
+  bottom: 0;
   a {
     text-decoration: none;
     color: black;
   }
 }
+
+

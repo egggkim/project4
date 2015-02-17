@@ -1,8 +1,16 @@
-<button><%= link_to "Calendar", "/home/#/calendar" %></button>
-<button><%= link_to "To Dos", "/home/#/todo" %></button>
-<button><%= link_to "Address Book", "/home/#/addressbook" %></button>
-<button><%= link_to "Log out", logout_path, method: :delete  %></button>
-<button><%= link_to "Add a new event", new_event_path%></button>
-<button><%= link_to "Add a new client", new_client_path %></button>
+<div class="container-fluid">
 
-<br><br><br>
+  <div class="form-header">logo placeholder</div>
+
+  <div class="nav">
+    <a><%= link_to "Calendar", "/home/#/calendar" %></a>
+    <a><%= link_to "To Dos", "/home/#/todo" %></a>
+    <a><%= link_to "Address Book", "/home/#/addressbook" %></a>
+  </div>
+</div>
+
+<div class="development">
+  <a class="logout"><%= link_to "Log out", logout_path, method: :delete  %></a>
+  <a><%= link_to "Add a new event", new_event_path%></a>
+  <a><%= link_to "Add a new client", new_client_path %></a>
+</div>
