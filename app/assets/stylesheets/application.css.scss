@@ -16,23 +16,20 @@
  */
 
  body {
+  font-family: "fanwood"; 
   letter-spacing: 2px;
   height: 100%;
  }
 
- a { 
-  color: #000000;
-  font-family: bebas;
-  text-decoration: none;
-}
-
 // templates/addressbook.html
-.contact li {
-  width: 300px;
-  border: 1px solid black;
-  text-align: center;
-  margin: 10px;
-}
+// #contact-list li {
+//   width: 300px;
+//   height: 300px;
+//   border: 1px solid black;
+//   text-align: center;
+//   display: inline-block;
+//   margin: 10px;
+// }
 
 #client-name {
   text-transform: uppercase;
@@ -42,6 +39,7 @@ li {
   list-style: none;
 }
 
+// address book template container
 .addressbook {
   width: 80%;
   margin: 0 auto;
@@ -54,6 +52,28 @@ li {
   text-align: center;
 }
 
+// address book search filter
 input {
   width: 60%;
+  font-family: 'fanwood';
+  font-size: 16px;
+  text-align: center;
+}
+
+#contact-list {
+  li {
+    display: inline-block;
+    border: 1px solid black;
+    width: 250px;
+    height: 150px;
+    margin: 30px;
+    margin-top: 10px;
+  }
+  a {
+    color: #000000;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #58b058;
+  }
 }
