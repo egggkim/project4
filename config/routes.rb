@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'home#welcome'
+
+  root 'home#index'
   
   # single page app
   get '/home' => 'home#index' 

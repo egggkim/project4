@@ -11,3 +11,37 @@
 
   font-family: 'ostrich sans';
 }
+
+.landing-page {
+  height: 100%;
+}
+
+.header {
+  a {
+    text-decoration: none;
+  }
+  text-align: center;
+  vertical-align: "text-bottom";
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
+
+.header-img {
+  background-image: url('euc.jpg');
+  height: 500px;
+  width: 100%;
+}
+
+.about {
+  width: 80%;
+  font-family: 'gotham condensed';
+  text-align: center;
+  margin: 0 auto;
+}
+
+.footer {
+  font-family: "times new roman";
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}

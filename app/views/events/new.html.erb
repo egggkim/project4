@@ -2,10 +2,10 @@
 <h1>Add a new event</h1>
 
 <%= bootstrap_form_for @event do |f| %>
-  <%= f.text_field :address %>
-  <%= f.text_field :date %>
-  <%= f.text_field :start_time %>
-  <%= f.text_field :end_time %>
+  <%= f.text_field :title, :id => "eventTitle" %>
+  <%= f.text_field :address, :id => "eventAddress"  %>
+  <%= f.text_field :start_time, :id => "eventStart"  %>
+  <%= f.text_field :end_time, :id => "eventEnd"  %>
 
   <%= f.submit "Add this event!" %>
 <% end %> 
