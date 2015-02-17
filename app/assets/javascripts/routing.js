@@ -46,7 +46,7 @@
         controller: 'MainController',
         controllerAs: 'main'
       })
-
+      
       .otherwise({
         redirectTo: '/'
       });

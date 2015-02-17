@@ -13,8 +13,7 @@ module API
     end
 
     def create      
-      client = Client.new(client_params)            
-
+      client = Client.new(client_params)
       if client.save
         render json: client, status: 201
       else
@@ -39,7 +38,7 @@ module API
 
     private
       def client_params
-        params.require(:client).permit(:name, :email, :phone)
+        params.require(:client).permit(:first_name, :last_name, :email, :phone)
       end
   end
 end
