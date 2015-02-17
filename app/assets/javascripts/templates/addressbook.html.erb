@@ -7,10 +7,13 @@
 <h4>Clients:</h4>
 <!-- move new client view and functionality here! -->
 
+
+<!-- this view is styled in application.css.scss -->
 <div id="client-list" ng-controller="ClientsController as clients">
+<input ng-model="searchText" placeholder="Search for a client">
   <ul>
     <div class="contact">
-      <li ng-repeat="client in clients.clientList | orderBy:'name'">
+      <li ng-repeat="client in clients.clientList | orderBy:'name' | filter:searchText">
         <p id="client-name">{{ client.name }}</p><hr>
         <p id="client-email">Email: {{ client.email }}</p>
         <p id="client-phone">Phone:{{ client.phone }}</p>
