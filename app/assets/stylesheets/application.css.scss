@@ -31,14 +31,6 @@
 //   margin: 10px;
 // }
 
-#client-name {
-  text-transform: uppercase;
-}
-
-li {
-  list-style: none;
-}
-
 // address book template container
 .addressbook {
   width: 80%;
@@ -53,30 +45,38 @@ li {
   }
 }
 
+// address book header image
 #addressbook-header {
   height: 250px;
-  border: 1px solid black;
+  background-color: #eeeeee;
   text-align: center;
 }
 
-
+// address book content
 #contact-list {
   li {
     display: inline-block;
-    background-color: #f6f6f6;
+    background-color: #eeeeee;
     width: 250px;
     height: 150px;
     margin: 30px;
     margin-top: 10px;
   }
+  #client-name {
+    text-transform: uppercase;
+    font-family: "gotham condensed";
+    font-size: 1.1em;
+    letter-spacing: 4px;
+  }
   hr {
     border-top: 3px solid #ffffff; 
   }
+  // link to send email
   a {
     color: #000000;
     text-decoration: none;
   }
   a:hover {
-    color: #58b058;
+    color: #9fddaa;
   }
 }
