@@ -25,3 +25,19 @@
   font-family: bebas;
   text-decoration: none;
 }
+
+// templates/addressbook.html
+.contact li {
+  width: 300px;
+  border: 1px solid black;
+  text-align: center;
+  margin: 10px;
+}
+
+#client-name {
+  text-transform: uppercase;
+}
+
+li {
+    list-style: none;
+  }

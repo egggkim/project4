@@ -9,10 +9,12 @@
 
 <div id="client-list" ng-controller="ClientsController as clients">
   <ul>
-    <li ng-repeat="client in clients.clientList | orderBy:'name'">
-     <p>Name: {{ client.name }}</p>
-     <p>Email: {{ client.email }}</p>
-     <p>Phone:{{ client.phone }}</p>
-    </li>
+    <div class="contact">
+      <li ng-repeat="client in clients.clientList | orderBy:'name'">
+        <p id="client-name">{{ client.name }}</p><hr>
+        <p id="client-email">Email: {{ client.email }}</p>
+        <p id="client-phone">Phone:{{ client.phone }}</p>
+      </li>
+    </div>
   </ul>
 </div>
