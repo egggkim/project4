@@ -1,23 +1,26 @@
-<h1>Address Book</h1>
+<div class="addressbook">
+  <h1>Address Book</h1>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <div id="addressbook-header">image placeholder</div>
 
-<!-- Add client name filter here -->
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
-<h4>Clients:</h4>
-<!-- move new client view and functionality here! -->
+  <h4>Clients:</h4>
+  <!-- move new client view and functionality here! -->
 
+  <!-- this view is styled in application.css.scss -->
+  <div id="client-list" ng-controller="ClientsController as clients">
+  <input ng-model="searchClient" placeholder="Search for a client">
 
-<!-- this view is styled in application.css.scss -->
-<div id="client-list" ng-controller="ClientsController as clients">
-<input ng-model="searchText" placeholder="Search for a client">
   <ul>
     <div class="contact">
-      <li ng-repeat="client in clients.clientList | orderBy:'name' | filter:searchText">
+      <li ng-repeat="client in clients.clientList | orderBy:'name' | filter:searchClient">
         <p id="client-name">{{ client.name }}</p><hr>
         <p id="client-email">Email: {{ client.email }}</p>
         <p id="client-phone">Phone:{{ client.phone }}</p>
+        <!-- add link to edit client info -->
       </li>
     </div>
   </ul>
+  </div>
 </div>

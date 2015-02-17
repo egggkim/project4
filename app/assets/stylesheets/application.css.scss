@@ -39,5 +39,21 @@
 }
 
 li {
-    list-style: none;
-  }
+  list-style: none;
+}
+
+.addressbook {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#addressbook-header {
+  height: 250px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+input {
+  width: 60%;
+}

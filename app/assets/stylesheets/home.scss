@@ -16,7 +16,7 @@
   height: 100%;
 }
 
-.header {
+.nav {
   a {
     text-decoration: none;
   }
@@ -37,6 +37,15 @@
   font-family: 'gotham condensed';
   text-align: center;
   margin: 0 auto;
+}
+
+.statistics {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  img {
+    margin: 20px;
+  }
 }
 
 .footer {
