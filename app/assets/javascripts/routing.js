@@ -40,20 +40,6 @@
         controllerAs: 'main'
       })
 
-      .when('/about', {
-        title: "about",
-        templateUrl: 'about.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      })
-
-      .when('/contact', {
-        title: "contact",
-        templateUrl: 'contact.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      })
-
       .when('/events', {
         title: "events",
         templateUrl: 'event.html',
