@@ -3,8 +3,8 @@
 <button><%= link_to "Address Book", "/home/#/addressbook" %></button>
 <button><%= link_to "About", "/home/#/about" %></button>
 <button><%= link_to "Contact", "/home/#/contact" %></button>
-<%= link_to "Log out", logout_path, method: :delete  %>
+<button><%= link_to "Log out", logout_path, method: :delete  %></button>
+<button><%= link_to "Add a new event", new_event_path%></button>
+<button><%= link_to "Add a new client", new_client_path %></button>
 
 <br><br><br>
-
-<button><%= link_to "Add a new event", "/home/#/events/new" %></button>

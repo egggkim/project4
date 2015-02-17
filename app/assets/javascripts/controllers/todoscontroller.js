@@ -7,7 +7,7 @@ angular
   function TodosController($resource){
     var self = this;
 
-    var Todo = $resource("http://localhost:3000/api/todos/:id",
+    var Todo = $resource("http://localhost:3000/api/todos/",
       { id: "@id" },
       {
         'update': { method: 'PUT' }
@@ -30,12 +30,14 @@ angular
     // CREATE
     function addTodo(){
       var newList = new Todo();
-      newList.task = self.text;
+      newList.task = self.task;
+      newList.due_date = self.due;
       newList.done = false;
       newList.$save();  // POST /api/todos
 
       this.todoList.push(newList);
-      self.text = null;
+      self.task = null;
+      self.due = null;
     }
 
     // UPDATE

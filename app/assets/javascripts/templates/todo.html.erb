@@ -14,7 +14,9 @@
   <main>        
     <!-- begin add new todo -->
     <section class="add-todo">
-      <input class="text-box" type="text" placeholder="Enter your task here" ng-model="todos.text">
+      <input class="text-box" type="text" placeholder="Enter your task here" ng-model="todos.task">
+      <!-- below needs to be a calendar datepicker -->
+      <input class="text-box" type="text" placeholder="Due date" ng-model="todos.due">
       <button class="btn btn-add" ng-click="todos.addTodo()">+</button>
     </section>
     <!-- end add new todo -->
@@ -25,6 +27,7 @@
         <li ng-repeat="todo in todos.todoList">
           <input class="checkbox" type="checkbox" ng-model="todo.done">
           <span ng-class="{done: todo.done}">{{ todo.task }}</span>
+          <span ng-class="{done: todo.}">{{ todo.due }}</span>
           <button class="btn btn-delete" ng-click="todos.deleteTodo($index)">x</button>
         </li>
       </ul>

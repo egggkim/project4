@@ -1,10 +1,13 @@
-<h1>Add a new event</h1>
+<h1>All events</h1>
 
-<form>
-  <p>Address: </p><input type="text" name="address">
-  <p>Date: </p><input type="text" name="date">
-  <p>Start Time: </p><input type="text" name="start_time">
-  <p>End Time: </p><input type="text" name="end_time">
-  <br>
-  <input type="submit" value="Submit">
-</form>
+<!-- all events view is rendering all events even without the list below ... needs to be fixed -->
+<div id="event-list" ng-controller="EventsController as events">
+  <ul>
+    <li ng-repeat="event in events.eventList">
+     <p>Address: {{ event.address }}</p>
+     <p>Date: {{ event.date }}</p>
+     <p>Start Time:{{ event.start_time }}</p>
+     <p>End Time:{{ event.end_time }}</p>
+    </li>
+  </ul>
+</div>

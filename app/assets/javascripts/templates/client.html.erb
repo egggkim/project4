@@ -5,13 +5,14 @@
 <!-- Add client name filter here -->
 
 <h4>Clients:</h4>
+<!-- move new client view and functionality here! -->
 
 <div id="client-list" ng-controller="ClientsController as clients">
   <ul>
-    <li ng-repeat="client in clients.clientList">
-     {{ client.name }}
-     {{ client.email }}
-     {{ client.phone }}
+    <li ng-repeat="client in clients.clientList | orderBy:'name'">
+     <p>Name: {{ client.name }}</p>
+     <p>Email: {{ client.email }}</p>
+     <p>Phone:{{ client.phone }}</p>
     </li>
   </ul>
 </div>

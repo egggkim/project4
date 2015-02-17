@@ -54,7 +54,7 @@
         controllerAs: 'main'
       })
 
-      .when('/events/new', {
+      .when('/events', {
         title: "events",
         templateUrl: 'event.html',
         controller: 'MainController',
