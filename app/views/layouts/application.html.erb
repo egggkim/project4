@@ -22,14 +22,19 @@
 </head>
 
 <body>
-    <!-- angular templates -->
-    <% if logged_in? %>
-      <%= render 'shared/nav' %>
-      <div ng-view></div>
+  <!-- angular templates -->
+  <% if logged_in? %>
+    <%= render 'shared/nav' %>
+    <div ng-view></div>
 
-    <!-- rails views -->
-    <% else %>
-      <%= yield %>
-    <% end %>
+  <!-- rails views -->
+  <% else %>
+    <%= yield %>
+  <% end %>
+
+  <div class="row footer">
+    <span>&copy; 2015</span>
+    <a href="#">contact us</a>
+  </div>
 </body>
 </html>
