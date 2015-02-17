@@ -35,7 +35,7 @@
 
       .when('/addressbook', {
         title: "address book",
-        templateUrl: 'client.html',
+        templateUrl: 'addressbook.html',
         controller: 'MainController',
         controllerAs: 'main'
       })

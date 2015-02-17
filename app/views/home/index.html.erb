@@ -3,19 +3,20 @@
 <!-- add if logged in conditional -->
 
 <!-- else render standard index below -->
-<!-- <div ng-controller="cookieController as cookie">
+<div ng-controller="cookieController as cookie">
   <% if logged_in? %>
     <div ng-view ng-init="cookie.init(<%= current_user.id %>)">
     </div>      
   <% end %>
 </div>
- -->
+
 <div class="landing-page container-fluid">
   <div class="row header">
     <a href="#about">ABOUT</a>
     <a href="#">SOCIAL</a>
-    <a href="#">SIGN UP</a>
-    <a href="#">LOG IN</a>
+    <!-- turn these two links below into modals -->
+    <a href="/signup">SIGN UP</a>
+    <a href="/login">LOG IN</a>
   </div>
 
   <div class="row header-img"></div>

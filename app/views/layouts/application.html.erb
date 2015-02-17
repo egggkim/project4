@@ -23,15 +23,13 @@
 
 <body>
     <!-- angular templates -->
-    <%= render 'shared/nav' %>
-    
-    <%= yield %>
-    <!--     
-      <div ng-view>
-
-      </div> -->
+    <% if logged_in? %>
+      <%= render 'shared/nav' %>
+      <div ng-view></div>
 
     <!-- rails views -->
-
+    <% else %>
+      <%= yield %>
+    <% end %>
 </body>
 </html>
