@@ -14,14 +14,6 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
-  # resources for events
-  resources :events
-  get '/events/new' => 'events#new'
-
-  # resources for events
-  resources :clients
-  get '/addressbook/new' => 'clients#new'
-
   match '*all' => 'application#handle_options', via: :options
 
   namespace :api, defaults: { format:"json" } do
