@@ -1,3 +1,14 @@
+<div ng-controller="EventsController as events">
+  <form ng-submit="events.addEvent()" class="add-event">
+    <input placeholder="address" ng-model="events.address">
+    <input placeholder="date" ng-model="events.date">
+    <input placeholder="start time" ng-model="events.start_time">
+    <input placeholder="end time" ng-model="events.end_time">
+    <br><input type="submit">
+    <div id="event-error"></div>
+  </form>
+</div>
+
 <div class='cal-container'>
   <div id='calendar'></div>
 </div>

@@ -30,14 +30,11 @@ angular
     // CREATE
     function addTodo(){
       var newList = new Todo();
-      newList.task = self.task;
-      newList.due_date = self.due;
-      newList.done = false;
-      newList.$save();  // POST /api/todos
-
-      this.todoList.push(newList);
-      self.task = null;
-      self.due = null;
+      newTodo.task = self.text;
+      newTodo.done = false;
+      newTodo.$save();
+      self.todoList.push(newTodo);
+      self.text = null;
     }
 
     // UPDATE
