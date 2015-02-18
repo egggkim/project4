@@ -1,9 +1,13 @@
 <div class="users-forms">
 
-  <div class="form-header">logo placeholder</div>
+  <div class="form-header">
+    <%= image_tag "logo-test.jpg", :class => "logo-header" %>
+  </div>
 
   <div class='signup-form'>
-    <h3>PLACEHOLDER: SIGN UP</h3><hr>
+    <div class="facebook">
+      <button class="btn btn-primary">Sign up with Facebook</button>
+    </div>
     <%= form_for @user do |f| %>
       <%= f.text_field :name, hide_label: true, placeholder: "Name" %>
       <%= f.email_field :email, hide_label: true, placeholder: "Email" %>

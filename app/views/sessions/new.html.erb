@@ -3,10 +3,14 @@
     <%= flash[:notice] %>
   <% end %>
 
-  <div class="form-header">logo placeholder</div>
+  <div class="form-header">
+    <%= image_tag "logo-test.jpg", :class => "logo-header" %>
+  </div>
 
   <div class="login-form">
-    <h3>PLACEHOLDER: LOGIN</h3><hr>
+    <div class="facebook">
+      <button class="btn btn-primary">Log in with Facebook</button>
+    </div>
     <%= form_for :login do |f| %>
       <%= f.text_field :email, hide_label: true, placeholder: "Email" %>
       <%= f.password_field :password, hide_label: true, placeholder: "Password" %>
