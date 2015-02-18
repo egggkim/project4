@@ -18,6 +18,7 @@
       <input placeholder="email" ng-model="clients.email">
       <input placeholder="phone" ng-model="clients.phone">
       <br><input type="submit">
+      <div id="client-error"></div>
     </form>
 
     <ul id="contact-list">
@@ -26,6 +27,7 @@
           <p id="client-name">{{ client.last_name }}, {{ client.first_name }}</p><hr>
           <p class="client-info">Email: <a href="mailto:{{ client.email }}?Subject=Hello!">{{ client.email }}</a></p>
           <p class="client-info">Phone:{{ client.phone }}</p>
+          <a href="" ng-click="clients.updateClient()">Edit Client</a>
           <!-- add link to edit client info -->
 
         </li>
