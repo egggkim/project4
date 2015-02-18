@@ -15,6 +15,9 @@
  *= require fullcalendar
  */
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
  body {
   font-family: "fanwood"; 
   letter-spacing: 2px;

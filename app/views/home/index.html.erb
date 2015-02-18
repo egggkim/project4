@@ -10,7 +10,7 @@
   <% end %>
 </div>
 
-<div class="container landing-page">
+<div class="container-fluid">
   <div class="row nav">
     <a href="#about">ABOUT</a>
     <a href="#">SOCIAL</a>
@@ -19,10 +19,10 @@
     <a href="/login">LOG IN</a>
   </div>
 
-  <div class="row header-img">header image</div>
+  <div class="row" id="header-img"></div>
 
-  <div class="row about">
-    <h4>About Floralist</h4>
+  <div class="row" id="about">
+    <h4>About Floralist</h4><hr>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -31,17 +31,21 @@
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </div>
 
-  <div class="row statistics">
-    <span class="col-md-4">
-      <%= image_tag("about.jpg") %>
-    </span>
-
-    <span class="col-md-4">
-      <%= image_tag("about.jpg") %>
-    </span>
-
-    <span class="col-md-4">
-      <%= image_tag("about.jpg") %>
-    </span>
+  <div class="row" id="features">
+    <div class="col-md-4">
+      <%= image_tag "cal.jpg", :class => "feature" %>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. </p>
+    </div>
+    <div class="col-md-4" id="feature-todos">
+      <%= image_tag "todos.jpg", :class => "feature" %>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. </p>
+    </div>
+    <div class="col-md-4" id="feature-addressbook">
+      <%= image_tag "addressbook.jpg", :class => "feature" %>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. </p>
+    </div>
   </div>
 </div>
