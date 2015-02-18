@@ -14,6 +14,7 @@ module API
 
     def create      
       client = Client.new(client_params)
+      client.user = current_user
       if client.save
         render json: client, status: 201
       else

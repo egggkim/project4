@@ -88,6 +88,38 @@ height: 100%;
   }
 }
 
+.client-forms {
+  text-align: center;
+  // user input fields
+  input {
+    padding-left: 10px;
+    height: 30px;
+    margin: 5px;
+    width: 80%;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    font-family: "gotham condensed";
+    font-size: .8em;
+    letter-spacing: 2px;
+  }
+  button {
+    width: 80%;
+    font-family: "gotham condensed";
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    border: none;
+  }
+  a {
+    color: black;
+  }
+}
+
+#client-error {
+  width: 80%;
+  margin: 0 auto;
+}
+
 // nav bar for users and non-users
 .nav {
   a {   
