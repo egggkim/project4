@@ -37,6 +37,9 @@ height: 100%;
   margin-bottom: 20px;
   padding: 30px;
   text-align: center;
+  h4 {
+    text-transform: uppercase;
+  }
   // address book search filter
   input {
     margin-top: 15px;
@@ -88,7 +91,7 @@ height: 100%;
   }
 }
 
-.client-forms {
+.client-forms, .event-forms {
   text-align: center;
   // user input fields
   input {
@@ -119,6 +122,18 @@ height: 100%;
   width: 80%;
   margin: 0 auto;
 }
+
+.add-todos {
+  background-color: red;
+  height: 100%;
+}
+
+.todos-list {
+  background-color: green;
+  height: 100%;
+}
+
+
 
 // nav bar for users and non-users
 .nav {
