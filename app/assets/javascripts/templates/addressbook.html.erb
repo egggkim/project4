@@ -1,20 +1,39 @@
-<div class="container-fluid template-container">
-  <h1>Address Book</h1>
+<!-- this view is styled in application.css.scss -->
 
-  <div class="template-header">image placeholder</div>
+<div class="container-fluid">
+  <div class="row">
+    <%= image_tag "addressbook-full.jpg", :class => "img-responsive" %>
+  </div>
+  
+  <div class="row" id="addressbook">
+    <h4>Address Book</h4><hr>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <input ng-model="searchClient" placeholder="Search for a client by name, number or email">
+    <br>
+    <button type="button" class="add-new-client" data-toggle="modal" data-target="#addClientModal">Add a new client</button>
+  </div>
 
-  <!-- move new client view and functionality here! -->
+  <div class="row row-centered" id="client-list" ng-controller="ClientsController as clients">
+    <ul>
+      <li class="col-md-3 col-centered client-info" ng-repeat="client in clients.clientList | orderBy:'last_name' | filter:searchClient">
+        <p id="client-name">{{ client.last_name }}, {{ client.first_name }}</p><hr>
+        <p class="client-info">Email: <a href="mailto:{{ client.email }}?Subject=Hello!">{{ client.email }}</a></p>
+        <p class="client-info">Phone:{{ client.phone }}</p>
+        <button type="button" class="editClient" data-toggle="modal" data-target="#addClientModal">Edit information</button>
+        <!-- add link to edit client info -->
+      </li>
+    </ul>
+  </div>
 
-  <!-- this view is styled in application.css.scss -->
-  <div id="client-list" ng-controller="ClientsController as clients">
-  <input ng-model="searchClient" placeholder="Search for a client by name, number or email">
-  <br>
-  <button type="button" class="addNewClient" data-toggle="modal" data-target="#addClientModal">
-  Add new client
-  </button>
+<!-- ============= MODALS CONTENT BELOW ============ -->
 
+<!-- ADD CLIENT MODAL -->
     <div class="modal fade" id="addClientModal">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -35,26 +54,40 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" data-dismiss="modal">Cancel</button>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-  
+<!-- END ADD CLIENT MODAL -->
 
-    <ul id="contact-list">
-      <div class="contact">
-        <li class="col-md-4 contact-info" ng-repeat="client in clients.clientList | orderBy:'last_name' | filter:searchClient">
-          <p id="client-name">{{ client.last_name }}, {{ client.first_name }}</p><hr>
-          <p class="client-info">Email: <a href="mailto:{{ client.email }}?Subject=Hello!">{{ client.email }}</a></p>
-          <p class="client-info">Phone:{{ client.phone }}</p>
-          <a href="" ng-click="clients.updateClient()">Edit Client</a>
-          <!-- add link to edit client info -->
+<!-- UPDATE CLIENT MODAL -->
+    <div class="modal fade" id="updateClientModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Update client information</h4>
+            <h6>All fields must be input in the proper format</h6>
+          </div>
+          <div class="modal-body">
+            <!-- need to add style to li to account for text overflow -->
+            <form ng-submit="clients.updateClient(client)" class="add-client">
+              <input placeholder="{{client.first_name}}" ng-model="clients.first_name">
+              <input placeholder="last name" ng-model="clients.last_name">
+              <input placeholder="email (name@email.com)" ng-model="clients.email">
+              <input placeholder="phone (123-456-7890)" ng-model="clients.phone">
+              <br><input type="submit">
+              <div id="client-error"></div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" data-dismiss="modal" ng-click="deleteClient(client)">Delete client</button>
+            <button type="button" data-dismiss="modal">Cancel</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+<!-- END UPDATE CLIENT MODAL -->
 
-        </li>
-      </div>
-    </ul>
-
-  </div>
 </div>

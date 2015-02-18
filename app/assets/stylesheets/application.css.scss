@@ -18,73 +18,60 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
- body {
-  font-family: "fanwood"; 
-  letter-spacing: 2px;
-  height: 100%;
- }
-
-// templates/addressbook.html
-// #contact-list li {
-//   width: 300px;
-//   height: 300px;
-//   border: 1px solid black;
-//   text-align: center;
-//   display: inline-block;
-//   margin: 10px;
-// }
+body {
+font-family: "fanwood"; 
+letter-spacing: 2px;
+height: 100%;
+}
 
 // address book template container
-.template-container {
+#client-options {
   width: 80%;
   margin: 0 auto;
   text-align: center;
+}
+
+#addressbook {
+  width: 65%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 30px;
+  text-align: center;
   // address book search filter
   input {
-    width: 60%;
+    margin-top: 15px;
+    width: 80%;
     font-family: 'fanwood';
-    font-size: 16px;
     text-align: center;
-    margin: 20px;
   }
-  h1 {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 20px;
+  // add new client button
+  .add-new-client {
+    border: none;
+    margin-top: 20px;
   }
 }
 
-// address book header image
-.template-header {
-  height: 250px;
+// address book view, client list row
+#client-list {
   background-color: #eeeeee;
   text-align: center;
-  margin: 20px;
-}
-
-// address book content
-#contact-list {
+  height: 100%;
+  ul {
+    width: 80%;
+    margin: 30px auto;
+  }
   li {
-    display: inline-block;
-    background-color: #eeeeee;
+    background-color: white;
     width: 250px;
-    height: 150px;
-    margin: 30px;
-    margin-top: 30px;
+    height: 200px;
+    margin: 10px 10px;
   }
   #client-name {
     text-transform: uppercase;
     font-family: "gotham condensed";
     font-size: 1.1em;
     letter-spacing: 4px;
-    padding-top: 15px;
-    padding-bottom: 5px;
-  }
-  .client-info {
-    padding: 10px;
-  }
-  hr {
-    border-top: 3px solid #ffffff; 
+    padding-top: 10px;
   }
   // link to send email
   a {
@@ -93,6 +80,11 @@
   }
   a:hover {
     color: #9fddaa;
+  }
+  // edit client info 
+  .editClient {
+    margin-top: 20px;
+    border: none;
   }
 }
 
@@ -140,6 +132,16 @@
     text-decoration: none;
     color: black;
   }
+}
+
+/* centered columns styles */
+.row-centered {
+  text-align:center;
+}
+.col-centered {
+  display: inline-block;
+  float: none;
+  margin-right:-4px;
 }
 
 

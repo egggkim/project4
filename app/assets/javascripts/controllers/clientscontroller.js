@@ -10,6 +10,7 @@ angular
     self.clientList   = [];  
     self.addClient    = addClient;
     // self.updateClient = updateClient;
+    // self.deleteClient = deleteClient;
 
     $http.get("/api/clients").
       success(function(data, status, headers, config) {
@@ -37,10 +38,10 @@ angular
       });
     }
 
-    // function updateClient() {
+    // function updateClient(client) {
     //   $http({
-    //     url: "/api/clients",
-    //     method: "PUT",
+    //     url: "/api/clients/:id",
+    //     method: "PATCH",
     //     data: {
     //       'first_name': self.first_name,
     //       'last_name': self.last_name,
@@ -50,9 +51,17 @@ angular
     //   })
     //   .success(function(data) {
     //     self.clientList;
+    //     window.location.reload();
     //   })
     //   .error(function(data) {
     //     console.log("cannot update")
+    //   })
+    // }
+
+    // function deleteClient(client) {
+    //   $http({
+    //     url: "/api/clients/:id",
+    //     method: "DELETE",
     //   })
     // }
   }
