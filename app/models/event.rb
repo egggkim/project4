@@ -7,7 +7,4 @@ class Event < ActiveRecord::Base
   validates :date, presence: :true
   validates :start_time, presence: :true
   validates :end_time, presence: :true
-
-  # uploaders/ for event photo album
-  mount_uploader :image, PhotoUploader
 end
