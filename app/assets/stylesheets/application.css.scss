@@ -99,9 +99,9 @@
 // nav bar for users and non-users
 .nav {
   a {   
-    color: #969696;
+    color: #3e3e3e;
     margin: 10px;
-    font-family: bebas;
+    font-family: 'bebas';
     letter-spacing: 3px;
     text-decoration: none;
   }
@@ -111,7 +111,7 @@
 }
 
 .logout {
-  color: #969696;
+  color: #3e3e3e;
   margin: 10px;
   letter-spacing: 3px;
   text-decoration: none;
@@ -122,7 +122,7 @@
   text-align: center;
   margin-bottom: 30px;
   a {   
-    color: #969696;
+    color: #3e3e3e;
     margin: 10px;
     letter-spacing: 3px;
     text-decoration: none;
@@ -133,6 +133,7 @@
 .footer {
   font-family: "fanwood"; 
   margin-top: 50px;
+  margin-bottom: 10px;
   text-align: center;
   bottom: 0;
   a {

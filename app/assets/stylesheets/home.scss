@@ -12,15 +12,15 @@
   font-family: 'fanwood';
 }
 
-// .landing-page {
-//   height: 100%;
-//   width: 100%;
-//   text-align: center;
-// }
+#logo {
+  text-align: center;
+}
 
-#header-img {
-  background-image: url('euc.jpg');
-  height: 500px;
+.logo-header {
+  height: 70px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 #about {

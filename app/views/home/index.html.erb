@@ -11,6 +11,10 @@
 </div>
 
 <div class="container-fluid">
+  <div class="row" id="logo">
+    <%= image_tag "logo-test.jpg", :class => "logo-header" %>
+  </div>
+
   <div class="row nav">
     <a href="#about">ABOUT</a>
     <a href="#">SOCIAL</a>
@@ -19,7 +23,9 @@
     <a href="/login">LOG IN</a>
   </div>
 
-  <div class="row" id="header-img"></div>
+  <div class="row">
+    <%= image_tag "euc.jpg", :class => "img-responsive" %>
+  </div>
 
   <div class="row" id="about">
     <h4>About Floralist</h4><hr>
@@ -42,7 +48,7 @@
     </div>
     <div class="col-md-4">
       <%= image_tag "todos.jpg", :class => "feature" %>
-      <h4>To Dos</h4>
+      <h4>Task Manager</h4>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
