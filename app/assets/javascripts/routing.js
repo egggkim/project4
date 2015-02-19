@@ -13,28 +13,28 @@
       $routeProvider
       // when you are in the default page
       .when('/', {
-        title: 'floristt',
+        title: 'Welcome to Floralist',
         templateUrl: 'index.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
 
       .when('/calendar', {
-        title: "calendar",
+        title: "Floralist (Calendar)",
         templateUrl: 'calendar.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
 
-      .when('/todo', {
-        title: "todos",
+      .when('/todos', {
+        title: "Floralist (Task Manager)",
         templateUrl: 'todo.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
 
       .when('/addressbook', {
-        title: "address book",
+        title: "Floralist (Address Book)",
         templateUrl: 'addressbook.html',
         controller: 'MainController',
         controllerAs: 'main'
