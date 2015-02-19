@@ -13,7 +13,7 @@ module API
     end
 
     def create      
-      event = Event.new(event_paramss)            
+      event = Event.new(event_params)            
 
       if event.save
         render json: event, status: 201
@@ -41,5 +41,5 @@ module API
       def event_paramss
         params.require(:event).permit(:title, :address, :date, :start_time, :end_time)
       end
-  end
+    end
 end

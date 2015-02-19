@@ -29,8 +29,43 @@ $(document).ready(function() {
     // calendar functions below
     
     // calendar options below
+    events: function(start, end, timezone, callback) {
+      $.ajax({
+        url: '/api/events',
+        dataType: 'json',
+        data: {
+          // our hypothetical feed requires UNIX timestamps
+          start: start.unix(),
+          end: end.unix()
+        },
+        success: function(data) {
+          var events = [];
+          // console.log("INSIDE SUCCESS!", data)
+          event_arr = data.events;
+          for (var i = 0; i < event_arr.length; i++) {
+            // console.log("inside for loop");
+            events.push(
+              event_arr[i]
+            )
+            // console.log("this is events",events)
+          }
+          // $(data).find('event').each(function() {
+          // data.events.each(function() {
+          //   console.log("inside before event push")
+          //   events.push({
+          //     title: $(this).attr('title'),
+          //     date: $(this).attr('date'),
+          //     start: $(this).attr('start_time') // will be parsed
+          //   });
+          // });
+          // $("#calendar").fullCalendar('renderEvent', events, 'stick')
+          // console.log(data.events[0].date);
+          // console.log(data.events[0].title);
+          callback(events);
+        }
+      });
+    },
     editable: true,
-    eventSources: '/api/events',
     eventColor: "#FFBEC0",
     eventStartEditable: true,
     eventDurationEditable: true,
