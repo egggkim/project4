@@ -7,9 +7,9 @@ angular
   function TodosController($http) {
     var self = this;
 
-    self.todoslist = [];
-    self.addTodo   = addTodo;
-    self.updateTodo   = updateTodo;
+    self.todoslist   = [];
+    self.addTodo     = addTodo;
+    self.updateTodo  = updateTodo;
 
     $http.get("/api/todos")
       .success(function(data, status, headers, config) {

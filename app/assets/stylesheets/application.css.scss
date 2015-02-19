@@ -83,6 +83,11 @@ height: 100%;
       padding: 7px;
       border-radius: 5px;
       }
+      #delete-todo {
+        float: right;
+        border: none;
+        border-radius: 3px;
+      }
     }
     .done {
       text-decoration: line-through;
