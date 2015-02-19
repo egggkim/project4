@@ -29,7 +29,7 @@
         <h5>Your Tasks:</h5>
         <ul>
           <li class="tasks" ng-repeat="todo in todos.todoList">
-            <input type="checkbox" ng-model="todo.done">
+            <input type="checkbox" ng-model="todo.done" ng-click="todos.updateTodo(todo)">
             <span ng-class="{done: todo.done}">{{ todo.task }}</span>
             <button>x</button>
           </li>
