@@ -43,10 +43,18 @@ height: 100%;
 }
 
 .logout {
-  color: #3e3e3e;
-  margin: 10px;
-  letter-spacing: 3px;
-  text-decoration: none;
+  float: right;
+  margin-top: 10px;
+  .logout-btn {
+    border: 1px solid #eeeeee;
+    border-radius: 3px;
+    text-decoration: none;
+    background-color: white;
+    padding: 5px;
+    a {
+      color: #3e3e3e;
+    }
+  }
 }
 
 // nav bar links below are for development only

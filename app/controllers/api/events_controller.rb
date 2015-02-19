@@ -13,8 +13,7 @@ module API
     end
 
     def create      
-      event = Event.new(event_params)            
-
+      event = Event.new(event_params)
       if event.save
         render json: event, status: 201
       else
@@ -24,7 +23,7 @@ module API
 
     def update
       event = Event.find(params[:id])
-      if event.update(event_paramss)
+      if event.update(event_params)
         render json: event, status: 200
       else
         render json: { errors: event.errors }, status: 422
@@ -38,7 +37,7 @@ module API
     end
 
     private
-      def event_paramss
+      def event_params
         params.require(:event).permit(:title, :address, :date, :start_time, :end_time)
       end
     end

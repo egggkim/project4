@@ -1,13 +1,12 @@
 <div class="container-fluid" ng-controller="EventsController as events">
-    
-  <div class="row" id="cal-template">
-    <button type="button" class="add-new-event" data-toggle="modal" data-target="#addEventModal">Add a new event</button>
-  </div>
 
   <div class='cal-container'>
+    <div class="row" id="cal-template">
+      <button type="button" class="add-new-event" data-toggle="modal" data-target="#addEventModal">Add a new event</button>
+    </div>
+    
     <div id='calendar'></div>
   </div>
-
 
 <!-- ============= MODALS CONTENT BELOW ============ -->  <!-- ADD EVENT MODAL -->
   <div class="modal fade" id="addEventModal">

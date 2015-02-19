@@ -3,13 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .cal-container {
-  width: 80%;
+  width: 65%;
   margin: 0 auto;
-
   height: 100%;
   vertical-align: middle;
-
   font-family: 'fanwood';
+}
+
+#cal-template {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  .add-new-event {
+    border: none;
+    border: 1px solid #eeeeee;
+    border-radius: 3px;
+    background-color: white;
+  }
 }
 
 #logo {

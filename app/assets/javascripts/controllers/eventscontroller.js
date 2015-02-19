@@ -32,7 +32,7 @@ angular
         window.location.reload()
       })
       .error(function(data, status) {
-        console.log(data, status);
+        console.log(status);
         $("#event-error").text("There was an error adding this event. Please try again.")
       });
     }  

@@ -66,7 +66,7 @@ $(document).ready(function() {
       });
     },
     editable: true,
-    eventColor: "#FFBEC0",
+    eventColor: "#9fddaa",
     eventStartEditable: true,
     eventDurationEditable: true,
     eventTextColor: "#606060",
