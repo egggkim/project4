@@ -21,6 +21,7 @@ angular
         url: "/api/events",
         method: "POST",
         data: {
+          'title': self.text,
           'address': self.address,
           'date': self.date,
           'start_time': self.start_time,
@@ -28,11 +29,11 @@ angular
         }
       })
       .success(function(data) {
-        self.eventList;
+        window.location.reload()
       })
       .error(function(data, status) {
-        console.log(status);
-        $("#event-error").text("problemz")
+        console.log(data, status);
+        $("#event-error").text("There was an error adding this event. Please try again.")
       });
     }  
   }

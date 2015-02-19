@@ -39,18 +39,18 @@ angular
 
     function updateTodo(todo) {
       $http({
-        url: "/api/todos/"+ todo.id,
+        url: "/api/todos/" + todo.id,
         method: "PATCH",
         data: {
           'done': true
         }
       })
       .success(function(data) {
-        console.log("hi")
+        console.log("Successfully updated task.")
       })
       .error(function(data, status) {
         console.log(status)
-        $('#todo-error').text("There was an issue adding this todo. Please try again.")
+        $('#todo-error').text("There was an issue updating this todo. Please try again.")
       });
     }
 
