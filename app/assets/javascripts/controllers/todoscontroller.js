@@ -7,9 +7,10 @@ angular
   function TodosController($http) {
     var self = this;
 
-    self.todoslist   = [];
-    self.addTodo     = addTodo;
-    self.updateTodo  = updateTodo;
+    self.todoslist = [];
+    self.addTodo   = addTodo;
+    self.updateTodo   = updateTodo;
+    self.deleteTodo   = deleteTodo;
 
     $http.get("/api/todos")
       .success(function(data, status, headers, config) {
@@ -37,13 +38,10 @@ angular
     }
 
     function updateTodo(todo) {
-      // console(todoList[$index])
       $http({
         url: "/api/todos/"+ todo.id,
         method: "PATCH",
         data: {
-          // 'task': self.task,
-          // 'due_date': self.due,
           'done': true
         }
       })
@@ -54,5 +52,15 @@ angular
         console.log(status)
         $('#todo-error').text("There was an issue adding this todo. Please try again.")
       });
+    }
+
+    function deleteTodo(todo) {
+      $http({
+        url: "/api/todos/" + todo.id,
+        method: "DELETE"
+      })
+      .success(function(data) {
+        window.location.reload();
+      })
     }
   }

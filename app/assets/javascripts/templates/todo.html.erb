@@ -31,11 +31,10 @@
           <li class="tasks" ng-repeat="todo in todos.todoList">
             <input type="checkbox" ng-model="todo.done" ng-click="todos.updateTodo(todo)">
             <span ng-class="{done: todo.done}">{{ todo.task }}</span>
-            <button id="delete-todo">x</button>
+            <button ng-click="todos.deleteTodo(todo)" id="delete-todo">x</button>
           </li>
         </ul>
       </div>
-
     </div>
   </div>
 
