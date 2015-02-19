@@ -11,33 +11,32 @@
     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-  <div class="row" id="add-todo" ng-controller="TodosController as todos">
-    <!-- begin add new todo -->
-    <div class="col-md-3 add-todo client-forms">
-      <form ng-submit="todos.addTodo()">
-        <input class="text-box" type="text" placeholder="Enter your task here" ng-model="todos.task">
-        <!-- below needs to be a calendar datepicker -->
-        <input class="text-box" type="text" placeholder="Due date" ng-model="todos.due">
-        <input type="submit" value="Add task">
-        <div id="client-error"></div>
-        </form>
-    </div>
-    <!-- end add new todo -->
-
-    <!-- begin show all todos -->
-    <div class="col-md-9 todo-list">
-      <h5>Your tasks:</h5>
-      <ul>
-        <li ng-repeat="todo in todos.todoList">
-          <input class="checkbox" type="checkbox" ng-model="todo.done">
-          <span ng-class="{done: todo.done}">{{ todo.task }}</span>
-          <span ng-class="{done: todo.}">{{ todo.due }}</span>
-          <button class="btn btn-delete" ng-click="todos.deleteTodo($index)">x</button>
-        </li>
-      </ul>
-    </div>
-    <!-- end show all todos -->
-
   </div>
+
+  <div class="row todo-container" ng-controller="TodosController as todos">
+    <div class="all-todos">
+
+      <div class="col-md-4" id="add-todo">
+        <form class="client-forms" ng-submit="todos.addTodo()"> 
+          <input type="text" placeholder="Enter your task here" ng-model="todos.task">
+          <input type="text" placeholder="Due date" ng-model="todos.due">
+          <input type="submit">
+          <div id="todo-error"></div>
+        </form>
+      </div>
+
+      <div class="col-md-8" id="todo-list">
+        <h5>Your Tasks:</h5>
+        <ul>
+          <li class="tasks" ng-repeat="todo in todos.todoList">
+            <input type="checkbox" ng-model="todo.done">
+            <span ng-class="{done: todo.done}">{{ todo.task }}</span>
+            <button>x</button>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
 </div>

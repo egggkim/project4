@@ -1,50 +1,37 @@
 angular
-  .module("app")
+  .module('app')
   .controller("TodosController", TodosController);
 
-  TodosController.$inject = ['$http'];
+  TodosController.$inject = [$http];
 
   function TodosController($http) {
     var self = this;
 
-    self.todoList   = [];
-    self.addTodo    = addTodo;        // CREATE
-    // self.updateTodo = updateTodo;     // UPDATE
-    // self.deleteTodo = deleteTodo;     // DESTROY
-    
-    $http.get("/api/todos").
-      success(function(data, status, headers, config) {
+    self.todoslist = [];
+    self.addTodo   = addTodo;
+
+    $http.get("/api/todos")
+      .success(function(data, status, headers, config) {
         self.todoList = data.todos;
       });
 
-    // CREATE
-    function addTodo(){
+    function addTodo() {
       $http({
         url: "/api/todos",
         method: "POST",
         data: {
           'task': self.task,
-          'done': self.done
+          'due_date': self.due,
+          'done': false
         }
       })
-      var newList = new Todo();
-      newTodo.task = self.text;
-      newTodo.done = false;
-      newTodo.$save();
-      self.todoList.push(newTodo);
-      self.text = null;
+      .success(function(data) {
+        self.todoList;
+        window.location.reload();
+      })
+      .error(function(data, status) {
+        console.log(status)
+        $('#todo-error').text("There was an issue adding this todo. Please try again.")
+      });
     }
-
-    // UPDATE
-    function updateTodo(todo){
-      todo.$update();   // PUT /api/todos/:id
-    }
-
-    // DESTROY
-    function deleteTodo(todo){
-      todo.$delete();   // DESTROY /api/todos/:id
-
-      self.todoList.splice(self.todoList.indexOf(todo), 1);
-    }
-
   }
