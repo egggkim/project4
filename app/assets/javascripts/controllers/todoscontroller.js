@@ -2,33 +2,31 @@ angular
   .module("app")
   .controller("TodosController", TodosController);
 
-  TodosController.$inject = ['$resource'];
+  TodosController.$inject = ['$http'];
 
-  function TodosController($resource){
+  function TodosController($http) {
     var self = this;
 
-    var Todo = $resource("http://localhost:3000/api/todos/",
-      { id: "@id" },
-      {
-        'update': { method: 'PUT' }
-      }
-    );
-
-    self.todoList   = getTodos();     // INDEX
+    self.todoList   = [];
     self.addTodo    = addTodo;        // CREATE
-    self.updateTodo = updateTodo;     // UPDATE
-    self.deleteTodo = deleteTodo;     // DESTROY
+    // self.updateTodo = updateTodo;     // UPDATE
+    // self.deleteTodo = deleteTodo;     // DESTROY
     
-    self.completedTodos = completedTodos;
-    self.remainingTodos = remainingTodos;
-
-    // INDEX
-    function getTodos(){
-      return Todo.query();  // GET /api/todos
-    }
+    $http.get("/api/todos").
+      success(function(data, status, headers, config) {
+        self.todoList = data.todos;
+      });
 
     // CREATE
     function addTodo(){
+      $http({
+        url: "/api/todos",
+        method: "POST",
+        data: {
+          'task': self.task,
+          'done': self.done
+        }
+      })
       var newList = new Todo();
       newTodo.task = self.text;
       newTodo.done = false;
@@ -49,27 +47,4 @@ angular
       self.todoList.splice(self.todoList.indexOf(todo), 1);
     }
 
-    //returns a count of the tasks that have been marked as done
-    function completedTodos(){
-      var count = 0;
-      for(var i = 0; i < self.todoList.length; i++){
-        if(self.todoList[i].done){
-          count++;
-        }
-      }
-      return count;
-    }
-
-    //returns a count of the tasks that have not been marked as done
-    function remainingTodos(){
-      var count = 0;
-      for(var i = 0; i < self.todoList.length; i++){
-        if(self.todoList[i].done === false){
-          count++;
-        }
-      }
-      return count;
-    }
-
   }
-  

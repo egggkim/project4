@@ -12,13 +12,16 @@
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-  <div class="row" id="todos-list" ng-controller="TodosController as todos">
+  <div class="row" id="add-todo" ng-controller="TodosController as todos">
     <!-- begin add new todo -->
     <div class="col-md-3 add-todo client-forms">
-      <input class="text-box" type="text" placeholder="Enter your task here" ng-model="todos.task">
-      <!-- below needs to be a calendar datepicker -->
-      <input class="text-box" type="text" placeholder="Due date" ng-model="todos.due">
-      <input ng-click="todos.addTodo()" type="submit" value="Add task">
+      <form ng-submit="todos.addTodo()">
+        <input class="text-box" type="text" placeholder="Enter your task here" ng-model="todos.task">
+        <!-- below needs to be a calendar datepicker -->
+        <input class="text-box" type="text" placeholder="Due date" ng-model="todos.due">
+        <input type="submit" value="Add task">
+        <div id="client-error"></div>
+        </form>
     </div>
     <!-- end add new todo -->
 
