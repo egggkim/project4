@@ -43,7 +43,7 @@ angular
         url: "/api/clients/" + client.id,
         method: "PATCH",
         data: {
-          'first_name': self.new_first_name,
+          'first_name': self.first_name,
           'last_name': self.last_name,
           'email': self.email,
           'phone': self.phone,
