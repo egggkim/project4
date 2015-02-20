@@ -14,8 +14,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       flash[:notice] = "Error Signing up. Please try again."
-      redirect_to root_path
-      # render :new
+      render :new
     end
   end
 
