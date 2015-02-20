@@ -17,6 +17,7 @@ gem 'bcrypt'
 gem 'bower-rails'
 gem 'pry'
 gem 'responders', '~> 2.0'
+gem 'ngannotate-rails'
 
 # calendar
 gem 'fullcalendar-rails'
@@ -47,4 +48,5 @@ group :production do
   gem 'rails_12factor'
   gem 'thin'
   gem 'unicorn', '4.8.3'
+
 end
