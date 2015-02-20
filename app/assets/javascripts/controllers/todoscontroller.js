@@ -2,7 +2,7 @@ angular
   .module('app')
   .controller("TodosController", TodosController);
 
-  TodosController.$inject = ['$http'];
+TodosController.$inject = ['$http'];
 
   function TodosController($http) {
     var self = this;

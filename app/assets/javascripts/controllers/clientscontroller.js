@@ -2,7 +2,7 @@ angular
   .module("app")
   .controller("ClientsController", ClientsController);
 
-  ClientsController.$inject = ['$http'];
+ClientsController.$inject = ['$http'];
 
   function ClientsController($http){
     var self = this;

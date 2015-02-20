@@ -6,7 +6,7 @@
 		.module('app')
 		.controller('MainController', MainController);
 
-	MainController.$inject = ['ipCookie'];
+MainController.$inject = ['ipCookie'];
 
 	function MainController(ipCookie){
 

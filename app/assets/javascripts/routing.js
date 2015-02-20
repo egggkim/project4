@@ -14,35 +14,18 @@
       // when you are in the default page
       .when('/', {
         title: 'Welcome to Floralist',
-        templateUrl: 'index.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      })
-
-      .when('/calendar', {
-        title: "Floralist (Calendar)",
         templateUrl: 'calendar.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
-
       .when('/todos', {
-        title: "Floralist (Task Manager)",
         templateUrl: 'todo.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
 
       .when('/addressbook', {
-        title: "Floralist (Address Book)",
         templateUrl: 'addressbook.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      })
-
-      .when('/events', {
-        title: "events",
-        templateUrl: 'event.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
