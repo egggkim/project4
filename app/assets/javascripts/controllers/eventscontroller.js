@@ -2,7 +2,7 @@ angular
   .module("app")
   .controller("EventsController", EventsController);
 
-EventsController.$inject = ['$http'];
+ EventsController.$inject = ['$http'];
 
   function EventsController($http){
     var self = this;
