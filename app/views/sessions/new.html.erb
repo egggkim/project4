@@ -11,13 +11,16 @@
     <div class="users-form-header">
       <button class="btn btn-primary">Log in to Floralist</button>
     </div>
-    <%= form_for :login do |f| %>
-      <%= f.text_field :email, hide_label: true, placeholder: "Email" %>
-      <%= f.password_field :password, hide_label: true, placeholder: "Password" %>
 
-      <%= f.submit 'Log In', :id => "form-submit" %>
-    <% end %>
-    <br>
+    <div>
+      <%= form_for :login do |f| %>
+        <%= f.text_field :email, hide_label: true, placeholder: "Email" %>
+        <%= f.password_field :password, hide_label: true, placeholder: "Password" %>
+
+        <%= f.submit 'Log In', :id => "form-submit" %>
+      <% end %>
+      <br>
+    </div>
 
     <p>Not a member yet?</p><%= link_to "Sign Up", signup_path %>
   </div>

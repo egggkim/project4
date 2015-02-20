@@ -29,6 +29,12 @@
         controller: 'MainController',
         controllerAs: 'main'
       })
+
+      .when('/edit', {
+        templateUrl: 'edit.html',
+        controller: 'MainController',
+        controllerAs: 'main'
+      })
       
       .otherwise({
         redirectTo: '/'

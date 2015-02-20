@@ -1,6 +1,7 @@
 <div class="container-fluid">
   <div class="logout">
-    <button class="logout-btn"><%= link_to "Log out", logout_path, method: :delete  %></button>
+    <button class="logout-btn"><%= link_to "Edit Profile", "/home/#/edit" %></button>
+    <button class="logout-btn"><%= link_to "Log out", logout_path, method: :delete %></button>
   </div>
   
   <div class="form-header">
@@ -8,7 +9,8 @@
   </div>
 
   <div class="nav">
-    <a><%= link_to "Calendar", "/home/#/calendar" %></a>
+    <!-- onclick reload must be changed to render template automatically -->
+    <a><%= link_to "Calendar", "/home/#/calendar", :onClick => "window.location.reload()" %></a>
     <a><%= link_to "Task Manager", "/home/#/todos" %></a>
     <a><%= link_to "Address Book", "/home/#/addressbook" %></a>
   </div>

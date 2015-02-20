@@ -1,15 +1,4 @@
 <!-- landing page calendar view -->
-
-<!-- add if logged in conditional -->
-
-<!-- else render standard index below -->
-<div ng-controller="cookieController as cookie">
-  <% if logged_in? %>
-    <div ng-view ng-init="cookie.init(<%= current_user.id %>)">
-    </div>      
-  <% end %>
-</div>
-
 <div class="container-fluid">
   <div class="row" id="logo">
     <%= image_tag "logo-test.jpg", :class => "logo-header" %>
@@ -41,26 +30,19 @@
     <div class="col-md-4">
       <%= image_tag "cal.jpg", :class => "feature" %>
       <h4>Calendar</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
+
     <div class="col-md-4">
       <%= image_tag "todos.jpg", :class => "feature" %>
       <h4>Task Manager</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
+
     <div class="col-md-4">
       <%= image_tag "addressbook-mini.jpg", :class => "feature" %>
       <h4>Address Book</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
   </div>
 </div>

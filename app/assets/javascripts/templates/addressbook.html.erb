@@ -5,7 +5,7 @@
     <%= image_tag "addressbook-full.jpg", :class => "img-responsive" %>
   </div>
   
-  <div class="row" id="addressbook">
+  <div class="row" id="template-view">
     <h4>Address Book</h4><hr>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -25,7 +25,6 @@
         <p id="client-name">{{ client.last_name }}, {{ client.first_name }}</p><hr>
         <p class="client-info">Email: <a href="mailto:{{ client.email }}?Subject=Hello!">{{ client.email }}</a></p>
         <p class="client-info">Phone:{{ client.phone }}</p>
-        <!-- <button type="button" class="editClient" data-toggle="modal" data-target="#addClientModal">Edit information</button> -->
       </li>
     </ul>
 

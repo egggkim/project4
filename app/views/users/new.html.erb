@@ -8,16 +8,19 @@
     <div class="users-form-header">
       <button class="btn btn-primary">Sign up for Floralist</button>
     </div>
-    <%= form_for @user do |f| %>
-      <%= f.text_field :name, hide_label: true, placeholder: "Name" %>
-      <%= f.email_field :email, hide_label: true, placeholder: "Email" %>
-      <%= f.password_field :password, hide_label: true, placeholder: "Password" %>
-      <%= f.password_field :password_confirmation, label: "Confirm your password:", hide_label: true, placeholder: "Confirm Password" %>
 
-      <%= f.submit "Sign me up!", :id => "form-submit" %>
-    <% end %> 
-    <br>
-  <p>Already a member?</p><%= link_to "Log In", login_path %>
+    <div>
+      <%= form_for @user do |f| %>
+        <%= f.text_field :name, hide_label: true, placeholder: "Name" %>
+        <%= f.email_field :email, hide_label: true, placeholder: "Email" %>
+        <%= f.password_field :password, hide_label: true, placeholder: "Password" %>
+        <%= f.password_field :password_confirmation, label: "Confirm your password:", hide_label: true, placeholder: "Confirm Password" %>
+
+        <%= f.submit "Sign me up!", :id => "form-submit" %>
+      <% end %> 
+    </div>
+
+    <p>Already a member?</p><%= link_to "Log In", login_path %>
   </div> 
   <%= link_to "Cancel", root_path  %>
 </div>
