@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html ng-app='app'>
 <head>
-  <% if logged_in? %>
-    <title ng-bind="title"></title>
-    <!-- refers to the $rootScope title that was created -->
-  <% else %>
-    <title><%= yield(:title) %></title>
-    <!-- if angular, show angular title - else show rails title -->
-  <% end %>
+  <title>floralist</title>
 
   <%= stylesheet_link_tag    'application' %>
   <%= javascript_include_tag 'application' %>
