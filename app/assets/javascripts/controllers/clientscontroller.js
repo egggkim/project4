@@ -9,11 +9,12 @@ angular
 
     self.clientList   = [];  
     self.addClient    = addClient;
-    self.updateClient = updateClient;
-    self.deleteClient = deleteClient;
+    // self.updateClient = updateClient;
+    // self.deleteClient = deleteClient;
 
     $http.get("/api/clients").
       success(function(data, status, headers, config) {
+        console.log(data);
         self.clientList = data.clients;
       });
 
@@ -38,34 +39,34 @@ angular
       });
     }
 
-    function updateClient(client) {
-      $http({
-        url: "/api/clients/" + client.id,
-        method: "PATCH",
-        data: {
-          'first_name': self.first_name,
-          'last_name': self.last_name,
-          'email': self.email,
-          'phone': self.phone,
-        }
-      })
-      .success(function(data) {
-        console.log("Successfully updated client information.")
-        window.location.reload();
-      })
-      .error(function(data) {
-        $('#todo-error').text("There was an issue updating this todo. Please try again.")
-      })
-    }
+    // function updateClient(client) {
+    //   $http({
+    //     url: "/api/clients/" + client.id,
+    //     method: "PATCH",
+    //     data: {
+    //       'first_name': self.first_name,
+    //       'last_name': self.last_name,
+    //       'email': self.email,
+    //       'phone': self.phone,
+    //     }
+    //   })
+    //   .success(function(data) {
+    //     console.log("Successfully updated client information.")
+    //     window.location.reload();
+    //   })
+    //   .error(function(data) {
+    //     $('#todo-error').text("There was an issue updating this todo. Please try again.")
+    //   })
+    // }
 
-    function deleteClient(client) {
-      $http({
-        url: "/api/clients/" + client.id,
-        method: "DELETE",
-      })
-      .success(function(data) {
-        window.location.reload();
-      })
-    }
+    // function deleteClient(client) {
+    //   $http({
+    //     url: "/api/clients/" + client.id,
+    //     method: "DELETE",
+    //   })
+    //   .success(function(data) {
+    //     window.location.reload();
+    //   })
+    // }
   }
   
