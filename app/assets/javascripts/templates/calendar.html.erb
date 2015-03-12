@@ -1,12 +1,11 @@
 <div class="container-fluid" ng-controller="EventsController as events">
-<!-- 
+
   <div class='cal-container'>
     <div class="row" id="cal-template">
       <button type="button" class="add-new-event" data-toggle="modal" data-target="#addEventModal">Add a new event</button>
     </div>
-     -->
+    
     <div id='calendar'></div>
-    test
   </div>
 
 <!-- ============= MODALS CONTENT BELOW ============ -->  <!-- ADD EVENT MODAL -->
@@ -24,8 +23,6 @@
             <input placeholder="Title" ng-model="events.text">
             <input placeholder="Address" ng-model="events.address">
             <input type="datetime-local" placeholder="Date" ng-model="events.date">
-           <!--  <input placeholder="Start Time" ng-model="events.start_time">
-            <input placeholder="End Time" ng-model="events.end_time"> -->
             <input type="submit">
 
           <div id="event-error"></div>
