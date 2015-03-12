@@ -53932,8 +53932,7 @@ angular
 		var setCookie = function(id){
 			ipCookie('id', id, { expires: 30 });
 		}
-		v
-		ar removeCookie = function(){
+		var removeCookie = function(){
 			ipCookie.remove('id');
 		}
 
